@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* root colors*/
+:root {
+  --c-white: #ffffff;
+  --c-Egg-Shell: #f3e6d8;
+  --c-Light-Grey: #e4ded8;
+  --c-Wenge-Brown: #5f574e;
+  --c-Dark-Charcoal: #302d2c;
+  --c-Nutmeg: #854632;
+  --c-Dark-Raspberry: #7b284f;
+  --c-rose-white: #fff5fa;
+
+  --fs-main: 1rem;
+  --fs-heading: 1.75rem;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --ff-main: "Outfit", sans-serif;
+  --ff-headings: "Young Serif", sans-serif;
+}
+
+/* Fonts */
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/recipe-page-main/assets/fonts/outfit-v14-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/recipe-page-main/assets/fonts/outfit-v14-latin-600.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/recipe-page-main/assets/fonts/outfit-v14-latin-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* young-serif-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Young Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/recipe-page-main/assets/fonts/young-serif-v2-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-size: var(--fs-heading);
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  color: var(--c-Nutmeg);
+  margin-bottom: 1, 75rem;
+}
+
+ul,
+ol {
+  padding: 0 1rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  color: var(--c-Dark-Raspberry);
+}
+
+body {
+  font-family: var(--ff-main);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-main);
+  line-height: 1.5;
+  color: var(--c-Wenge-Brown);
+  background: var(--c-Egg-Shell);
+}
+
+/* text-styles */
+.recipe-title {
+  font-size: 2.5rem;
+  color: var(--c-Dark-Charcoal);
+}
+
+.prep-title {
+  font-size: 1.275rem;
+  font-weight: var(--fw-600);
+  color: var(--c-Dark-Raspberry);
+  margin-bottom: 0.5rem;
+}
+
+span {
+  /* color: var(--c-Dark-Raspberry); */
+  font-weight: var(--fw-700);
+}
+
+[data-cell="nutrient-value"] {
+  color: var(--c-Nutmeg);
+  font-weight: var(--fw-600);
+}
+
+li {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+li::marker {
+  color: var(--c-Nutmeg);
+  font-weight: var(--fw-600);
+}
+
+/* layout styles */
+
+.wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.recipe-wrapper {
+  max-width: 45em;
+  background: var(--c-white);
+  margin: 6rem 0;
+  padding: 1.755rem;
+  border-radius: 1.5rem;
+}
+
+/* general styles */
+
+.recipe-img {
+  border-radius: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.recipe-description {
+  margin-top: 1.2rem;
+}
+section {
+  margin-top: 2rem;
+}
+
+hr {
+  outline: none;
+  border: none;
+  height: 1px;
+  background: var(--c-Light-Grey);
+  margin-top: 2rem;
+}
+
+.preparation-time {
+  background: var(--c-rose-white);
+  padding: 1.75rem;
+  border-radius: 0.8rem;
+  margin-top: 2rem;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+tr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 1rem;
+  border-bottom: 1px solid var(--c-Light-Grey);
+}
+
+.recipe-ingredients h2{
+  margin-bottom: 1.4rem;
+}
+
+.recipe-instructions h3{
+  margin-bottom: 1.4rem;
+}
+
+.nutritonal-value h4{
+  margin-bottom: 1.4rem;
+}
+
+/* Media Query */
+@media(max-width:720px) {
+  .recipe-wrapper{
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .recipe-img {
+    border-radius: 0;
+  }
+
+  .recipe-container {
+    padding: 0 1.75rem;
+  }
+
+  .recipe-title {
+    font-size: 2.2rem;
+  }
+
+}
+
+
